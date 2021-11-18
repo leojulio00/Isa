@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <p id="txt">
+    
+  </p>
+  
+  
+  <script>
+  const txt = document.getElementById("txt");
+  
+  
+  function compararPalavras(textoExistente,textoAdquirido){
+    
+    var textoExistente, textoAdquirido;
+    
+    
+    var addArr = textoAdquirido.split(" ");
+  
+    var palavrasEncontradas = 0, palavrasNaoEncontradas = 0;
+  
+    for(var i = 0; i < addArr.length; i++){
+      
+      if(textoExistente.search(addArr[i]) < 0){
+        palavrasNaoEncontradas += 1;
+      }else{
+        palavrasEncontradas += 1;
+      }
+     
+    }
+      
+      if(palavrasEncontradas > palavrasNaoEncontradas){
+        return 1;
+      }else{
+        return 0;
+      }
+  }
+  
+  var pal1 = "vou ser um grande programador";
+  var pal2 = "quem quer ser um grande programador programador";
+  
+  if(compararPalavras(pal1,pal2) == 1){
+    txt.innerHTML = "verdade";
+  }else{
+    txt.innerHTML = "falso";
+  }
+  </script>
+</body>
+</html>
